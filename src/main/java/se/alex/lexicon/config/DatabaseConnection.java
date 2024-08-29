@@ -1,4 +1,4 @@
-package se.alex.lexicon;
+package se.alex.lexicon.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
