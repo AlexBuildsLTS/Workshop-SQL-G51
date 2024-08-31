@@ -29,9 +29,6 @@ public class App {
         } else {
             // If the person exists, update or skip as needed
             System.out.println("Person already exists: " + existingPerson);
-            // Optionally update their details
-            // existingPerson.setLastName("NewLastName");
-            // personDao.update(existingPerson);
         }
 
 
@@ -41,9 +38,7 @@ public class App {
             personDao.create(person);
             System.out.println("Person created: " + person);
         } else {
-            // If the person exists, update or skip as needed
             System.out.println("Person already exists: " + existingPerson);
-            // Optionally update their details
             // existingPerson.setLastName("NewLastName");
             // personDao.update(existingPerson);
         }
