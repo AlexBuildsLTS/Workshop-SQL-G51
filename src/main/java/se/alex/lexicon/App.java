@@ -1,9 +1,7 @@
 package se.alex.lexicon;
 
-import se.alex.lexicon.Dao.impl.CityDaoJdbc;
 import se.alex.lexicon.Dao.impl.PersonDaoJdbc;
 import se.alex.lexicon.Dao.impl.TodoItemDaoJdbc;
-import se.alex.lexicon.model.City;
 import se.alex.lexicon.model.Person;
 import se.alex.lexicon.model.TodoItem;
 
@@ -12,7 +10,7 @@ public class App {
         // Initialize DAOs
         PersonDaoJdbc personDao = new PersonDaoJdbc();
         TodoItemDaoJdbc todoItemDao = new TodoItemDaoJdbc();
-        CityDaoJdbc cityDao = new CityDaoJdbc();
+
 
         // Define the name you want to add
         String firstName = "Alex";
@@ -53,24 +51,6 @@ public class App {
         // Find and display all todo items
         System.out.println(todoItemDao.findAll());
 
-        // Add a new city
-        City newCity = new City(0, "New York", "USA", "New York", 8419000);
-        cityDao.add(newCity);
 
-        // Fetch all cities and display them
-        cityDao.findAll().forEach(city -> System.out.println(city.getName() + ", " + city.getCountryCode() + ", Population: " + city.getPopulation()));
-
-        // Fetch city by ID
-        City cityById = cityDao.findById(newCity.getId());
-        if (cityById != null) {
-            System.out.println("Found City: " + cityById.getName());
-        }
-
-        // Update city
-        newCity.setPopulation(8500000);
-        cityDao.update(newCity);
-
-        // Delete city
-        cityDao.delete(newCity);
     }
 }
